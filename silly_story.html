@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Silly Story Generator</title>
+    <script type="text/javascript">
+        function getStory(){
+
+            var name = document.getElementById("name").value;
+            if(document.getElementById('US').checked){
+                pTag.innerHTML = "It was 94 Fahrenheit outside, so Big Daddy went for a walk. When they got to Disneyland, they stared in horror for a few moments, then melted into a puddle on the sidewalk. :name: saw the whole thing, but he was not surprised — Big Daddy weighs 300 pounds, and it was a hot day.";
+            }
+            if(document.getElementById('UK').checked){
+                pTag.innerHTML = "It was 34 degree Centigrade outside, so Willy the Goblin went for a walk. When they got to the sooup kitchen, they stared in horror for a few moments, then spontaneously combusted. :name: saw the whole thing, but he was not surprised — Willy the Goblin weighs 300 pounds, and it was a hot day.";
+            }
+        }
+    </script>
+</head>
+<body>
+Enter Customer Name: <input type = "text" id = "name" name = "name"><br>
+Select one: <br><input type = "radio" name = "val1" id = "US">US<br>
+<input type = "radio" name = "val2" id = "UK">UK<br>
+
+<button onClick="getStory();">Display story</button>
+
+<p id = "displayArea"></p>
+
+</body>
+</html>
