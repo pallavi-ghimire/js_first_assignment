@@ -7,11 +7,16 @@
         function getStory(){
 
             var name = document.getElementById("name").value;
+            var pTag = document.getElementById("displayArea");
             if(document.getElementById('US').checked){
-                pTag.innerHTML = "It was 94 Fahrenheit outside, so Big Daddy went for a walk. When they got to Disneyland, they stared in horror for a few moments, then melted into a puddle on the sidewalk. :name: saw the whole thing, but he was not surprised — Big Daddy weighs 300 pounds, and it was a hot day.";
+                var Story = "It was 94 Fahrenheit outside, so Big Daddy went for a walk. When they got to Disneyland, they stared in horror for a few moments, then melted into a puddle on the sidewalk. Bob saw the whole thing, but he was not surprised — Big Daddy weighs 300 pounds, and it was a hot day.";
+                var New = Story.replace(/Bob/g, name)
+                pTag.innerHTML = New
             }
             if(document.getElementById('UK').checked){
-                pTag.innerHTML = "It was 34 degree Centigrade outside, so Willy the Goblin went for a walk. When they got to the sooup kitchen, they stared in horror for a few moments, then spontaneously combusted. :name: saw the whole thing, but he was not surprised — Willy the Goblin weighs 300 pounds, and it was a hot day.";
+                var Story = "It was 34 degree Centigrade outside, so Willy the Goblin went for a walk. When they got to the sooup kitchen, they stared in horror for a few moments, then spontaneously combusted. Bob saw the whole thing, but he was not surprised — Willy the Goblin weighs 300 pounds, and it was a hot day.";
+                var New = Story.replace(/Bob/g, name);
+                pTag.innerHTML = New;
             }
         }
     </script>
@@ -19,7 +24,7 @@
 <body>
 Enter Customer Name: <input type = "text" id = "name" name = "name"><br>
 Select one: <br><input type = "radio" name = "val1" id = "US">US<br>
-<input type = "radio" name = "val2" id = "UK">UK<br>
+<input type = "radio" name = "val1" id = "UK">UK<br>
 
 <button onClick="getStory();">Display story</button>
 
