@@ -10,20 +10,26 @@
             var pTag = document.getElementById("displayArea");
             if(document.getElementById('US').checked){
                 var Story = "It was 94 Fahrenheit outside, so Big Daddy went for a walk. When they got to Disneyland, they stared in horror for a few moments, then melted into a puddle on the sidewalk. Bob saw the whole thing, but he was not surprised — Big Daddy weighs 300 pounds, and it was a hot day.";
-                var New = Story.replace(/Bob/g, name)
-                pTag.innerHTML = New
+                var New = Story.replace(/Bob/g, name);
+                var places = ['Connecticut', 'Florida', 'Hawaii', 'Illinois', 'Disneyland'];
+                var final = New;
+                var Rep1 = final.replace(/Disneyland/g, places[Math.floor(Math.random()*places.length)]);
+                pTag.innerHTML = Rep1;
             }
             if(document.getElementById('UK').checked){
                 var Story = "It was 34 degree Centigrade outside, so Willy the Goblin went for a walk. When they got to the sooup kitchen, they stared in horror for a few moments, then spontaneously combusted. Bob saw the whole thing, but he was not surprised — Willy the Goblin weighs 300 pounds, and it was a hot day.";
                 var New = Story.replace(/Bob/g, name);
-                pTag.innerHTML = New;
+                var places = ['Oxford', 'York', 'Disneyland', 'London', 'Edinburgh', 'the soup kitchen'];
+                var final = New;
+                var Rep2 = final.replace(/the sooup kitchen/g, places[Math.floor(Math.random()*places.length)]);
+                pTag.innerHTML = Rep2;
             }
         }
     </script>
 </head>
 <body>
 Enter Customer Name: <input type = "text" id = "name" name = "name"><br>
-Select one: <br><input type = "radio" name = "val1" id = "US">US<br>
+Select one: <br><input type = "radio" name = "val1" id = "US" checked>US<br>
 <input type = "radio" name = "val1" id = "UK">UK<br>
 
 <button onClick="getStory();">Display story</button>
